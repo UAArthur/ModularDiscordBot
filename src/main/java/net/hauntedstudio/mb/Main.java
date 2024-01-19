@@ -21,15 +21,18 @@ public class Main {
         // Start bots based on the loaded configuration
         this.dcBotMain = new DCBM(this, this.configUpdater.config);
         this.dcBotMain.startBots();
-    }
-    public static HashMap<String, String> jda = new HashMap<>();
-    public static void main(String[] args) {
-        //Loading first the Main class
-        new Main();
+
+
+        // Set the main class for the API
+        MBApi.setMain(this);
 
         //Loading the modules after starting the bots
         ModuleLoader moduleLoader = new ModuleLoader();
         moduleLoader.loadModules();
+    }
+    public static void main(String[] args) {
+        //Loading first the Main class
+        new Main();
     }
 
 }

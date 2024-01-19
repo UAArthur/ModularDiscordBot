@@ -50,4 +50,7 @@ public class DCBM {
         }
     }
 
+    public List<BotInstance> getBotInstances() {
+        return botInstances;
+    }
 }
