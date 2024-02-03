@@ -1,6 +1,7 @@
 package net.hauntedstudio.mb;
 
 import net.hauntedstudio.mb.bot.BotInstance;
+import net.hauntedstudio.mb.bot.commands.Command;
 
 import java.util.List;
 
@@ -18,5 +19,11 @@ public class MBApi {
 
     public static List<BotInstance> getBotInstances() {
         return main.dcBotMain.getBotInstances();
+    }
+
+
+    //Commands
+    public static void registerCommand(String moduleName, Command command){
+        main.dcBotMain.getCommandLoader().registerSlashCommand(moduleName, command);
     }
 }

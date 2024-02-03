@@ -29,7 +29,7 @@ public class BotInstance {
         return uid;
     }
 
-    public JDA getJdaInstance() {
+    public JDA getJda() {
         return jdaInstance;
     }
 

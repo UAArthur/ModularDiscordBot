@@ -41,10 +41,11 @@ public class ConfigUpdater {
             return gson.fromJson(reader, Config.class);
         } catch (IOException ex) {
             // An error occurred while reading the file
-            logger.severe("Failed to load config: ", ex);
+            logger.severe("Failed to load config: ", ex.getMessage());
             return null;
         }
     }
+
 
     private void saveConfig() {
         Gson gson = new Gson();
@@ -59,7 +60,7 @@ public class ConfigUpdater {
             Files.write(path, json.getBytes());
             logger.info("New Config saved successfully.");
         } catch (IOException e) {
-            logger.severe("Failed to save new config: ", e);
+            logger.severe("Failed to save new config: ", e.getMessage());
         }
     }
 }
